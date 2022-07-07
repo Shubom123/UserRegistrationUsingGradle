@@ -75,4 +75,20 @@ public class RegistrationDetails {
             System.out.println("Mobile Number is invalid");
 
     }
+    public static void validatePassword(){
+        System.out.println("Enter Password");
+        Scanner sc = new Scanner(System.in);
+        String password = sc.nextLine();
+        String regex="^[a-zA-Z0-9]{8,}$";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(password);
+        boolean b = m.matches();
+        System.out.println(b);
+
+        if(b==true)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is invalid");
+    }
 }
