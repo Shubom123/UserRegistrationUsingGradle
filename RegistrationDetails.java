@@ -39,4 +39,22 @@ public class RegistrationDetails {
             System.out.println("Last name is invalid");
 
     }
+    public static void validateEmail(){
+        System.out.println("Enter Email id");
+        Scanner sc = new Scanner(System.in);
+        String email = sc.nextLine();
+        String regex="^[a-z0-9]{2,}(['.''\\-''+']?)([a-z0-9]*)+@[a-z]{2,}['.'][a-z]{2,}$";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(email);
+        boolean b = m.matches();
+        System.out.println(b);
+
+        if(b==true)
+            System.out.println("Email id is valid");
+
+        else
+            System.out.println("Email Id is invalid");
+
+    }
 }
