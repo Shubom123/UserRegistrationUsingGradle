@@ -57,4 +57,22 @@ public class RegistrationDetails {
             System.out.println("Email Id is invalid");
 
     }
+    public static void validateMobileNumber(){
+        System.out.println("Enter Mobile number");
+        Scanner sc = new Scanner(System.in);
+        String mobile = sc.nextLine();
+        String regex="^[1-9]{2}[\\s]{0,1}[0-9]{10}$";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(mobile);
+        boolean b = m.matches();
+        System.out.println(b);
+
+        if(b==true)
+            System.out.println("Mobile number is valid");
+
+        else
+            System.out.println("Mobile Number is invalid");
+
+    }
 }
